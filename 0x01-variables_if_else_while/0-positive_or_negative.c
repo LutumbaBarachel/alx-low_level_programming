@@ -1,16 +1,29 @@
+#include <stdlib.h>
+#include <time.h>
 #include <stdio.h>
 
-int main() {
-    char letter = 'a'; // Start with the letter 'a'
+/**
+ * main - Determines if a number is positive, negative or zero.
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+	int n;
 
-    // Loop through each letter of the alphabet
-    while (letter <= 'z') {
-        putchar(letter); // Print the current letter
-        letter++; // Move to the next letter
-    }
-
-    putchar('\n'); // Print a newline character at the end
-
-    return 0;
+	srand(time(0));
+	n = rand() - RAND_MAX / 2;
+	if (n > 0)
+	{
+		printf("%d is positive\n", n);
+	}
+	else if (n == 0)
+	{
+		printf("%d is zero\n", n);
+	}
+	else
+	{
+		printf("%d is negative\n", n);
+	}
+	return (0);
 }
-
